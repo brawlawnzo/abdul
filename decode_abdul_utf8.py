@@ -31,7 +31,7 @@ for file in os.listdir(dirpath):
 
 OUTPUT_FILE_PATH = INPUT_FILE_PATH[:INPUT_FILE_PATH.rfind(".")] + SUFFIX + INPUT_FILE_PATH[INPUT_FILE_PATH.rfind("."):]
 
-with open(INPUT_FILE_PATH, encoding="utf_8") as ifd:
+with open(INPUT_FILE_PATH, encoding="utf_8", errors='replace') as ifd:
     with open(OUTPUT_FILE_PATH, 'w') as ofd:
         for string in ifd:
             ofd.write(unidecode(string))
